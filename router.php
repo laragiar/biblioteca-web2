@@ -30,6 +30,9 @@ switch ($params[0]) {
     case 'login':
         $userController->showLogin();
         break;
+    case 'logout':
+        $userController->logout();
+        break;
     case 'verifyLogin':
         $userController->verifyLogin();
         break;

@@ -15,8 +15,8 @@ class AutorModel {
     function getAutor(){
         $sentencia = $this -> db-> prepare("SELECT * FROM autor");
         $sentencia -> execute();
-        $autor = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        return $autor;
+        $autores = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $autores;
        
     }
     
@@ -38,7 +38,6 @@ class AutorModel {
     function deleteAutor($id){
         $sentencia = $this -> db->prepare("DELETE FROM autor WHERE idAutor=?");
         $sentencia->execute(array($id));
-
     }
 
      function updateAutor($idAutor,$nombre,$apellido, $nacionalidad){

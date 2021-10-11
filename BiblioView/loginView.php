@@ -1,26 +1,17 @@
 <?php
-
+require_once './libs/smarty-3.1.38/libs/Smarty.class.php';
 
 class LoginView{
 
     function __construct()
     {
-          $this -> model = new UserModel();
+        $this->smarty = new Smarty();
     }
-
-    /* function showLogin($error = ""){
-
-        echo '
-        <h2>Log In</h2>
-        <form method="POST" action ="verifyLogin">
-            <input type="text" name="email" placeholder="Ingrese su email..."  required/>
-            <input type="password" name="contraseña" placeholder="Ingrese su password..."  required/>
-            <button>Login</button>
-            <h4>'.$error.'</h4>
-    ';
-
-    } */
-
+function showAdmin(){
+    $this->smarty->assign('titulo','Administrador');
+    $this->smarty->assign('libros',$libros);
+    $this->smarty->display('templates/login.tpl');
+}
 function showRegistroView(){
     echo '<!DOCTYPE html>
 <html lang="en">
@@ -58,10 +49,10 @@ function showLoginView($error = ""){
 <body>
 
     <h2>Ingrese a su cuenta:</h2>
-    <form action="verifyLogin">
+    <form action="verifyLogin" method="post">
         Ingrese su mail: <input type="email" name="email">
         Ingrese su contraseña: <input type="password" name="contraseña">
-        <button type="submit">INgresar</button>
+        <button type="submit">Ingresar</button>
     </form>
     <h3>'.$error.'</h3>
     
