@@ -5,6 +5,7 @@ class AutorView {
 
     function __construct(){
         $this->smarty = new Smarty();
+        
     }
 
     function showAutor($autores){

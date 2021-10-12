@@ -14,15 +14,17 @@ class LibroController{
     
     function __construct(){
         $this->model = new libroModel();
-        $this->view = new libroView();
-        $this->modelAutor = new autorModel();
         $this->authHelper = new authHelper();
+        $this->modelAutor = new autorModel();
+        $this->view = new libroView();
+        
     }
-  
+    
     function showHome(){
+        $log=$this->authHelper->checkLoggedIn();
         $libros= $this-> model->getBiblio();
         $autor= $this-> modelAutor->getAutor();
-        $this->view->showBiblio($libros,$autor);
+        $this->view->showBiblio($libros,$autor, $log);
         
     }
 
@@ -37,10 +39,10 @@ class LibroController{
     } 
 
     function insertLibro(){
-        $this->authHelper->checkLoggedIn();
+        $log=$this->authHelper->checkLoggedIn();
         $libros=$this->model->getBiblio();
         $autor=$this->modelAutor->getAutor();
-        $this->view->formLibro($libros,$autor);
+        $this->view->formLibro($libros,$autor,$log);
     }
     
     function createLibro(){

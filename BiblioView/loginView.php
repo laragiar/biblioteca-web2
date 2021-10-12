@@ -9,7 +9,6 @@ class LoginView{
     }
 function showAdmin(){
     $this->smarty->assign('titulo','Administrador');
-    $this->smarty->assign('libros',$libros);
     $this->smarty->display('templates/login.tpl');
 }
 function showRegistroView(){

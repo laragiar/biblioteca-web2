@@ -1,4 +1,4 @@
-{include file='templates/header.tpl'}         
+{include file='templates/header.tpl' log=$log}         
             <h1>{$titulo}</h1>
             <h4>Visite los libros disponibles</h4>           
             <div>

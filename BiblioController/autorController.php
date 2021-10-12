@@ -16,8 +16,9 @@ class AutorController{
     function __construct(){
         $this->model = new autorModel();
         $this->modelLibro = new libroModel();
-        $this->view = new autorView();
         $this->authHelper = new authHelper();
+        $this->view = new autorView();
+       
     }
 
     function showAutor(){

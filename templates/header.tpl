@@ -5,16 +5,20 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <link rel="stylesheet" href="style.css">
             <title>{$titulo}</title>
         </head>
         <body>
-            <a href="home"><button>Home</button></a>
-            <a href="showAutor"><button>Autores</button></a>
-            <a href="showLibros"><button>Libros</button></a>
-            <a href="insertLibro"><button>Insertar nuevo libro</button></a>
-            <a href="insertAutor"><button>Insertar nuevo autor</button></a>
+            <button><a href="home">Home</a></button>
+            <button><a href="showAutor">Autores</a></button>
+            <button><a href="showLibros">Libros</a></button>
+            {if $log}
+            <button><a href="insertLibro">Insertar nuevo libro</a></button>
+            <button><a href="insertAutor">Insertar nuevo autor</a></button>   
+            <button><a href="logout">Log out</a></button>
+             
+            {else}
             <button><a href="login">Login</a></button>
-            <button><a href="registrarse">Registrarse</a></button>   
-            <a href="logout"><button>Log out</button></a>  
-                       
+            <button><a href="registrarse">Registrarse</a></button> 
+            {/if}       
