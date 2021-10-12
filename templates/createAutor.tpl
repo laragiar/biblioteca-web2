@@ -1,4 +1,4 @@
-  {include file='templates/header.tpl'}    
+  {include file='templates/header.tpl' log={$log}}    
    
     <form action="createAutor" method="POST">
         <p>INSERTE AUTOR:</p>

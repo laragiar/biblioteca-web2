@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-10-12 16:21:38
+/* Smarty version 3.1.38, created on 2021-10-12 16:58:10
   from 'C:\xampp\htdocs\biblioteca-web2\templates\biblio.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_616599f21c80e3_68658184',
+  'unifunc' => 'content_6165a282baf100_51065721',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '03bb6715dae8b8bb48220515a143e2fedc943422' => 
     array (
       0 => 'C:\\xampp\\htdocs\\biblioteca-web2\\templates\\biblio.tpl',
-      1 => 1634048472,
+      1 => 1634050642,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/header.tpl' => 1,
   ),
 ),false)) {
-function content_616599f21c80e3_68658184 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6165a282baf100_51065721 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('log'=>$_smarty_tpl->tpl_vars['log']->value), 0, false);
 ?>         
             <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>

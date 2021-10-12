@@ -10,15 +10,16 @@
             <title>{$titulo}</title>
         </head>
         <body>
+           <div>
             <button><a href="home">Home</a></button>
             <button><a href="showAutor">Autores</a></button>
             <button><a href="showLibros">Libros</a></button>
-            {if $log}
+            {if $log=true}
             <button><a href="insertLibro">Insertar nuevo libro</a></button>
             <button><a href="insertAutor">Insertar nuevo autor</a></button>   
-            <button><a href="logout">Log out</a></button>
-             
+            <button><a href="logout">Log out</a></button> 
             {else}
             <button><a href="login">Login</a></button>
             <button><a href="registrarse">Registrarse</a></button> 
             {/if}       
+           </div> 

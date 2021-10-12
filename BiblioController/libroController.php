@@ -3,7 +3,7 @@
 require_once './BiblioModel/libroModel.php';
 require_once './BiblioModel/autorModel.php';
 require_once './BiblioView/libroView.php';
-require_once './Helpers/AuthHelper.php';
+require_once './Helpers/authHelper.php';
 
 class LibroController{
 
@@ -21,20 +21,20 @@ class LibroController{
     }
     
     function showHome(){
-        $log=$this->authHelper->checkLoggedIn();
-        $libros= $this-> model->getBiblio();
-        $autor= $this-> modelAutor->getAutor();
+        $log=$this->authHelper->estalogueado();
+        $libros= $this->model->getBiblio();
+        $autor= $this->modelAutor->getAutor();
         $this->view->showBiblio($libros,$autor, $log);
         
     }
 
     function showLibros(){
-        $libros = $this->model->getLibro();
+        $libros=$this->model->getLibro();
         $this->view->showLibros($libros);
     }
     
     function showLibroid($id){
-        $libro = $this->model->get_Libro($id);
+        $libro=$this->model->get_Libro($id);
         $this->view->showLibroid($libro);
     } 
 
@@ -54,7 +54,7 @@ class LibroController{
     
     function updateLibro($id){
         $this->authHelper->checkLoggedIn();
-        $libro = $this->model->get_Libro($id);
+        $libro=$this->model->get_Libro($id);
         $this->view->showEdit($libro);
     } 
 
@@ -65,8 +65,8 @@ class LibroController{
     }
     
    function searchTitulo(){  
-        $libros = $this->model->searchTitulo($_POST['nombre']);
-        $this->view->searchView($libros);
+        $libros=$this->model->searchTitulo($_POST['nombre']);
+       // $this->view->searchView($libros);
     } 
 
     function deleteLibro($id){
