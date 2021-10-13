@@ -5,8 +5,10 @@
                 {foreach from=$libros item=$libro}
                     <h3>{$libro->nombre}
                         <a href="showLibroid/{$libro->idLibro}"><button>Ver Detalles</button></a>
+                        {if $admin !=''}
                         <a href="deleteLibro/{$libro->idLibro}"><button>Borrar</button></a>
                         <a href="updateLibro/{$libro->idLibro}"><button>Editar</button></a>
+                        {/if} 
                     </h3>
                 {/foreach}
             </div>  

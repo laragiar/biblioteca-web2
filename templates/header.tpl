@@ -9,17 +9,24 @@
             <link rel="stylesheet" href="style.css">
             <title>{$titulo}</title>
         </head>
-        <body>
-           <div>
+        <body class="bg-light">
+           <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light bg-light border-3 border-bottom border-dark">
+             
             <button><a href="home">Home</a></button>
             <button><a href="showAutor">Autores</a></button>
             <button><a href="showLibros">Libros</a></button>
-            {if $log=true}
+            
+            {if $admin!=""}
             <button><a href="insertLibro">Insertar nuevo libro</a></button>
             <button><a href="insertAutor">Insertar nuevo autor</a></button>   
-            <button><a href="logout">Log out</a></button> 
-            {else}
+            <button><a href="logout">Log out</a></button>
+            {/if}
+            {if $admin==""}
             <button><a href="login">Login</a></button>
             <button><a href="registrarse">Registrarse</a></button> 
-            {/if}       
+            {/if}    
+           
+            </nav>
+                
            </div> 

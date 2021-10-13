@@ -20,10 +20,10 @@ class UserController {
     }
 
     function registrarseControl($userEmail, $userPassword){
-        if (!empty($_POST['email']) && !empty($_POST['contraseña'])) {
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $userEmail = $_POST['email'];
-            $userPassword = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
-             $this->model->registrarse($userEmail, $userPassword);
+            $userPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $this->model->registrarse($userEmail, $userPassword);
         }
         $this->view->showHome();
     }
@@ -33,13 +33,13 @@ class UserController {
     }
 
     function verifyLogin(){
-        if (!empty($_POST['email']) && !empty($_POST['contraseña'])) {
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $userEmail = $_POST['email'];
-            $userPassword = $_POST['contraseña'];
+            $userPassword = $_POST['password'];
 
             $user = $this->model->getUser($userEmail);
 
-          if ($user && password_verify($userPassword,$user->contraseña)) {
+          if ($user && password_verify($userPassword,$user->password)) {
                 session_start();
                 $_SESSION["email"] = $userEmail;
                     
@@ -50,13 +50,12 @@ class UserController {
             }
         }
     }
-
     function logout(){
-            session_start();
-            session_destroy();
-            $this->view->showLoginView("Te deslogueaste");
-    }
-
+        session_start();
+        session_destroy();
+        $this->view->showLoginView("Te deslogueaste");
+}
+    
 
         
 }

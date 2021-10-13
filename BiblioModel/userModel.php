@@ -14,9 +14,9 @@ class UserModel{
 
 
 
-   function registrarse($email,$contraseña){
-        $sentencia = $this -> db -> prepare("INSERT INTO users(email,contraseña) VALUES(?,?)");
-        $sentencia -> execute(array($email,$contraseña));
+   function registrarse($email,$password){
+        $sentencia = $this -> db -> prepare("INSERT INTO users(email,password) VALUES(?,?)");
+        $sentencia -> execute(array($email,$password));
     }
 
 

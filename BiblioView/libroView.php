@@ -7,18 +7,19 @@ class LibroView {
             $this->smarty = new Smarty();
     }
 
-    function showBiblio($libros,$autor,$log){
+    function showBiblio($libros,$autor,$admin){
         $this->smarty->assign('titulo','Biblioteca');
         $this->smarty->assign('autor',$autor);
         $this->smarty->assign('libros',$libros);
-        $this->smarty->assign('log',$log);
+        $this->smarty->assign('admin',$admin);
         $this->smarty->display('templates/biblio.tpl');
 
     }
 
-    function showLibros($libros){
+    function showLibros($libros,$admin){
         $this->smarty->assign('titulo','Libros');
         $this->smarty->assign('libros',$libros);
+        $this->smarty->assign('admin',$admin);
         $this->smarty->display('templates/libros.tpl');      
     }
 

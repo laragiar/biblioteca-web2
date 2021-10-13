@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-10-12 16:58:10
+/* Smarty version 3.1.38, created on 2021-10-13 18:12:52
   from 'C:\xampp\htdocs\biblioteca-web2\templates\biblio.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_6165a282baf100_51065721',
+  'unifunc' => 'content_61670584009c14_50232438',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '03bb6715dae8b8bb48220515a143e2fedc943422' => 
     array (
       0 => 'C:\\xampp\\htdocs\\biblioteca-web2\\templates\\biblio.tpl',
-      1 => 1634050642,
+      1 => 1634141570,
       2 => 'file',
     ),
   ),
@@ -21,11 +21,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/header.tpl' => 1,
   ),
 ),false)) {
-function content_6165a282baf100_51065721 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('log'=>$_smarty_tpl->tpl_vars['log']->value), 0, false);
+function content_61670584009c14_50232438 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('admin'=>$_smarty_tpl->tpl_vars['admin']->value), 0, false);
 ?>         
             <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
-</h1>
+</h1> 
             <h4>Visite los libros disponibles</h4>           
             <div>
             INSERTE SU BUSQUEDA: 
@@ -76,14 +76,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <input type="submit" id="btn-genero" name="Filtrar">
         
             </div> 
-            <table>
-                <thead>
+            <div class="container-fluid">
+            <table class="table table-hover">
+                <thead class="bg-dark-25">
                     <tr>
-                        <th>Titulo</th>
-                        <th>Genero</th>
-                        <th>Editorial</th>
-                        <th>Descripcion</th>
-                        <th>Autor</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Editorial</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Autor</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,7 +95,7 @@ $_smarty_tpl->tpl_vars['libro']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['libro']->value) {
 $_smarty_tpl->tpl_vars['libro']->do_else = false;
 ?>
-           <tr><td><?php echo $_smarty_tpl->tpl_vars['libro']->value->nombre;?>
+           <tr scope="row"><td><?php echo $_smarty_tpl->tpl_vars['libro']->value->nombre;?>
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['libro']->value->genero;?>
 </td>
@@ -113,7 +114,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </tr>
             </tbody>
         </table>
-
+        </div>
 </body>
 </html><?php }
 }

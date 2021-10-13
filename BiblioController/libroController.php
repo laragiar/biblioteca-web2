@@ -21,21 +21,23 @@ class LibroController{
     }
     
     function showHome(){
-        $log=$this->authHelper->estalogueado();
+        $admin=$this->authHelper->logAdmin();
         $libros= $this->model->getBiblio();
         $autor= $this->modelAutor->getAutor();
-        $this->view->showBiblio($libros,$autor, $log);
+        $this->view->showBiblio($libros,$autor,$admin);
         
     }
 
     function showLibros(){
         $libros=$this->model->getLibro();
-        $this->view->showLibros($libros);
+        $logAdmin=$this->authHelper->logAdmin();
+        $this->view->showLibros($libros,$logAdmin);
     }
     
     function showLibroid($id){
+        $admin=$this->authHelper->logAdmin();
         $libro=$this->model->get_Libro($id);
-        $this->view->showLibroid($libro);
+        $this->view->showLibroid($libro,$admin);
     } 
 
     function insertLibro(){

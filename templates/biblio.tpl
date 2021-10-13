@@ -1,5 +1,5 @@
-{include file='templates/header.tpl' log=$log}         
-            <h1>{$titulo}</h1>
+{include file='templates/header.tpl' admin=$admin}         
+            <h1>{$titulo}</h1> 
             <h4>Visite los libros disponibles</h4>           
             <div>
             INSERTE SU BUSQUEDA: 
@@ -33,20 +33,21 @@
             <input type="submit" id="btn-genero" name="Filtrar">
         
             </div> 
-            <table>
-                <thead>
+            <div class="container-fluid">
+            <table class="table table-hover">
+                <thead class="bg-dark-25">
                     <tr>
-                        <th>Titulo</th>
-                        <th>Genero</th>
-                        <th>Editorial</th>
-                        <th>Descripcion</th>
-                        <th>Autor</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Editorial</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Autor</th>
                     </tr>
                 </thead>
                 <tbody>
                 
         {foreach from=$libros item=$libro}
-           <tr><td>{$libro->nombre}</td>
+           <tr scope="row"><td>{$libro->nombre}</td>
                 <td>{$libro->genero}</td>
                 <td>{$libro->editorial}</td>
                 <td>{$libro->descripcion}</td>
@@ -56,6 +57,6 @@
             </tr>
             </tbody>
         </table>
-
+        </div>
 </body>
 </html>

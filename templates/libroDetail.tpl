@@ -1,4 +1,4 @@
-  {include file='templates/header.tpl'} 
+{include file='templates/header.tpl' log={$log} }    
     <div>
         <h2>{$libro->nombre}</h2>
         <p>Genero:{$libro->genero}</p>
