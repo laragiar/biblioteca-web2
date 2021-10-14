@@ -30,6 +30,6 @@
                 </tr>
             </tbody>
         </table>
-    </body>        
+           
 {include file='templates/footer.tpl'} 
 </div>

@@ -20,7 +20,7 @@ class AutorModel {
        
     }
     
-    //Obtengo un solo autor por id    
+     
     function get_Autor($id){
         $sentencia = $this -> db-> prepare("SELECT * FROM autor WHERE idAutor=?");
         $sentencia -> execute(array($id));
@@ -34,7 +34,7 @@ class AutorModel {
         $sentencia -> execute(array($nombre,$apellido,$nacionalidad));
     }
 
-    //Borro un autor de la db por id
+  
     function deleteAutor($id){
         $sentencia = $this -> db->prepare("DELETE FROM autor WHERE idAutor=?");
         $sentencia->execute(array($id));

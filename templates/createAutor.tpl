@@ -17,11 +17,12 @@
             <div class="card-body">
             <input type="submit" class="btn btn-dark" value="Crear Autor">
             </div> 
-        </div> 
-        </form> 
+         
+        </form>
+       </div>   
            
 </div>
-</body>
+
 
 
 {include file='templates/footer.tpl'} 

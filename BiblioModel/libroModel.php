@@ -59,7 +59,6 @@ class LibroModel{
         $sentencia = $this -> db -> prepare("INSERT INTO libros (nombre,genero,editorial,descripcion,idAutor) VALUES(?,?,?,?,?)");
         $sentencia -> execute(array($nombre,$genero,$editorial, $descripcion,$idAutor));
     }
-
      
     function updateLibro($idLibro,$nombre, $genero, $editorial, $descripcion){
         $sentencia = $this->db->prepare("UPDATE  libros SET nombre=?,genero=?,editorial=?,descripcion=? WHERE idLibro= ?");

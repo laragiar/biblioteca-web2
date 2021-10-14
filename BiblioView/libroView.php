@@ -41,64 +41,6 @@ class LibroView {
  
     }
 
-    
- /*   function searchView($nombre){
-        $html = '<!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <base href="'.BASE_URL.'"/> 
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="style.css">
-            <title>Biblioteca</title>
-        </head>
-        <body>
-            <a href="showAutor"><button>Autores</button></a>
-            <a href="showLibros"><button>Libros</button></a>
-            <a href="insertLibro"><button>Insertar nuevo libro</button></a>
-            <a href="insertAutor"><button>Insertar nuevo autor</button></a>
-            <h1>Biblioteca</h1>
-            <h4>Visite los libros disponibles</h4>           
-             <div>
-            INSERTE SU BUSQUEDA: 
-            <select name="filtro" id="select-filtro">
-                <option selected>Elegir filtro</option> 
-                <option value="titulo">Titulo</option>
-                <option value="autor">Autor</option>
-                <option value="genero">Genero</option>
-            </select>
-        <table>
-        <thread>
-            <tr>
-                <th>Titulo</th>
-                <th>Genero</th>
-                <th>Editorial</th>
-                <th>Descripcion</th>
-                <th>Autor</th>
-            </tr>
-        </thread>
-        <tbody>
-            ';
-     
-        foreach ($nombre as $libro){
-        $html.='<tr><td>'.$libro->nombre.'</td>'
-                .'<td>'.$libro->genero.'</td>'
-                .'<td>'.$libro->editorial.'</td>'
-                .'<td>'.$libro->descripcion.'</td>'
-                .'<td><a href=viewAutorID/'.$libro->idAutor.'>'.$libro->nombreA.''.$libro->apellidoA.'</a></td>'; 
-                    
-        }
-       
-              </tr>
-            </tbody>
-        </table>
-
-        </body>
-       
-
-}     */
-
     function homeRedireccion(){ 
        header("Location: ".BASE_URL."home");
     }
@@ -110,4 +52,5 @@ class LibroView {
     function showLoginLocation(){
         header("Location: ".BASE_URL."login");
     }
+    
 }

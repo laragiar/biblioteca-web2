@@ -33,7 +33,7 @@
                 <li  class="px-4 "><a href="logout"class="mt-2 text-light"><p><ins>Log Out</ins></p></a></li>
                 {else}
                 <li  class="px-4"><a href="registrarse" class="mt-2 text-light"><p><ins>Registrarse</ins></p></a></li>
-                <li  class="px-4 "> <a href="login"class="mt-2 text-light"><p><ins>Login</ins></p></a></li>
+                <li  class="px-4 "> <a href="login"class="mt-2 text-light"><p><ins>Log In</ins></p></a></li>
                 {/if}
                 </ul>
             </div>  

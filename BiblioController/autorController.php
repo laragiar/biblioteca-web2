@@ -7,7 +7,6 @@ require_once './Helpers/AuthHelper.php';
 
 class AutorController{
 
-
     private $model;
     private $view;
     private $modelLibro;
@@ -43,13 +42,11 @@ class AutorController{
         $this->authHelper->checkLoggedIn();
         $this->model->deleteAutor($id);
         $this->view->showAutorLocation();
-
     }
 
     function viewAutorID($id){
-        $this->authHelper->checkLoggedIn();
-        $autor = $this->model->get_Autor($id);
-        $libros = $this->modelLibro->getLibrosByAutor($id);
+       $autor = $this->model->get_Autor($id);
+       $libros = $this->modelLibro->getLibrosByAutor($id);
        $this->view->showAutorID($autor,$libros);
     } 
 

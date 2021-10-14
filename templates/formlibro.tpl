@@ -16,7 +16,7 @@
                 <input type="text" name="editorial" required>
                 <div>
                 <p class ="card-text"><label for="colFormLabel" class="col-sm-2 col-form-label">Descripcion:</label></p>
-                <textarea type="text" name="descripcion"></textarea>
+                <textarea  id="colFormLabel" rows="6" type="text" name="descripcion"></textarea>
                 <p class ="card-text"><label for="colFormLabel" class="col-sm-2 col-form-label">Autor</label></p>
                 <select name="idAutor" required>  
                         <option value="" class="text-center">Seleccionar autor</option>
@@ -31,3 +31,4 @@
 </form>
 </div>
 {include file='templates/footer.tpl'} 
+

@@ -6,11 +6,11 @@
        <div class="col-12 col-sm-6 col-md-3 p-2">   
             <form action="verifyLogin" method="post">
                 <div class="form-group mt-2">
-                    <label for="inputEmail" class="col-form-label">Email: </label> 
+                    <label for="inputEmail" class="col-form-label">Email:</label> 
                     <input type="email" name="email" class="form-control" id="inputEmail" placeholder=" Ingrese su email" required>
                 </div>
                 <div class="form-group mt-2">
-                    <label for="inputPass" class="col-form-label">Contraseña: </label>
+                    <label for="inputPass" class="col-form-label">Contraseña:</label>
                     <input type="password" name="password" class="form-control" id="inputPass" placeholder=" Ingrese su contraseña" required>
                 </div>
                 <div class="mt-3">

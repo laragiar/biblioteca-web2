@@ -41,8 +41,7 @@ class UserController {
 
           if ($user && password_verify($userPassword,$user->password)) {
                 session_start();
-                $_SESSION["email"] = $userEmail;
-                    
+                $_SESSION["email"] = $userEmail;   
                 $this->view->showHome(); 
 
             } else {
@@ -50,10 +49,11 @@ class UserController {
             }
         }
     }
+
     function logout(){
         session_destroy();
         $this->view->showLoginView("Has sido deslogueado");
-}
+    }
     
 
         

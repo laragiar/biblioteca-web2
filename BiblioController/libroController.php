@@ -16,15 +16,13 @@ class LibroController{
         $this->model = new libroModel();
         $this->authHelper = new authHelper();
         $this->modelAutor = new autorModel();
-        $this->view = new libroView();
-        
+        $this->view = new libroView();    
     }
     
     function showHome(){
         $libros= $this->model->getBiblio();
         $autor= $this->modelAutor->getAutor();
-        $this->view->showBiblio($libros,$autor);
-        
+        $this->view->showBiblio($libros,$autor);     
     }
 
     function showLibros(){
@@ -63,11 +61,6 @@ class LibroController{
         $this->view->showLibroLocation();
     }
     
-   function searchTitulo(){  
-        $libros=$this->model->searchTitulo($_POST['nombre']);
-       // $this->view->searchView($libros);
-    } 
-
     function deleteLibro($id){
         $this->authHelper->checkLoggedIn();
         $this->model->deleteLibro($id);
