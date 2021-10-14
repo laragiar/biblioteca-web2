@@ -47,6 +47,7 @@ class AutorController{
     }
 
     function viewAutorID($id){
+        $this->authHelper->checkLoggedIn();
         $autor = $this->model->get_Autor($id);
         $libros = $this->modelLibro->getLibrosByAutor($id);
        $this->view->showAutorID($autor,$libros);

@@ -15,9 +15,12 @@
                 <tr>
                  <th><p class="subtituloL"> {$libro->nombre}</th>
                    
-                    <td> <a href="showLibroid/{$libro->idLibro}"><button class="btn btn-info text-light">Ver Detalles</button></a>
-                    <a href="updateLibro/{$libro->idLibro}"><button class="btn btn-success">Editar</button></a>
-                   <a href="deleteLibro/{$libro->idLibro}"><button class="btn btn-danger">Borrar</button></a></td>
+                  <td> <a href="showLibroid/{$libro->idLibro}"><button class="btn btn-info text-light">Ver Detalles</button></a>
+                   {if isset ($smarty.session.email)}
+                   <a href="updateLibro/{$libro->idLibro}"><button class="btn btn-success">Editar</button></a>
+                   <a href="deleteLibro/{$libro->idLibro}"><button class="btn btn-danger">Borrar</button></a>
+                   {/if}
+                   </td>
                 
                 </tr>
             </tbody>

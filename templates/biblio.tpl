@@ -1,4 +1,4 @@
-{include file='templates/header.tpl' admin=$admin}         
+{include file='templates/header.tpl'}         
             <div class="container-fluid  mt-4">
             <h1 class="text-center p-3">{$titulo}</h1> 
                      

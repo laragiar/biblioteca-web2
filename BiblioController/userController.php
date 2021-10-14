@@ -51,7 +51,6 @@ class UserController {
         }
     }
     function logout(){
-        session_start();
         session_destroy();
         $this->view->showLoginView("Has sido deslogueado");
 }
