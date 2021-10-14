@@ -8,7 +8,7 @@ class LibroView {
     }
 
     function showBiblio($libros,$autor,$admin){
-        $this->smarty->assign('titulo','Biblioteca');
+        $this->smarty->assign('titulo','Biblioteca Web');
         $this->smarty->assign('autor',$autor);
         $this->smarty->assign('libros',$libros);
         $this->smarty->assign('admin',$admin);

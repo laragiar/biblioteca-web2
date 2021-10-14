@@ -18,10 +18,12 @@ class AuthHelper
         session_start();
         if (isset ($SESSION['email'])){
             $admin= $SESSION['email'];
+            return $admin;
         } else {
             $admin='';
+            return $admin;
         } 
-        return $admin;
+        
       }
     } 
    /* function login($userEmail) {

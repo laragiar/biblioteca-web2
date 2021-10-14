@@ -6,7 +6,8 @@
             Editorial:<input type="text" name="editorial" value="{$libro->editorial}">
             Descripcion <textarea name="descripcion" >{$libro->descripcion}</textarea>
             <input type="submit" value="Finalizar edicion">
-        </form>        
+        </form> 
+          
     </body>
         
 {include file='templates/footer.tpl'} 

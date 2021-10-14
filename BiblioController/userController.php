@@ -46,14 +46,14 @@ class UserController {
                 $this->view->showHome(); 
 
             } else {
-                    $this->view->showLoginView("Acceso denegado");
+                    $this->view->showLoginView("Acceso denegado. Usuario o contraseña invalidos");
             }
         }
     }
     function logout(){
         session_start();
         session_destroy();
-        $this->view->showLoginView("Te deslogueaste");
+        $this->view->showLoginView("Has sido deslogueado");
 }
     
 

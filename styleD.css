@@ -1,0 +1,21 @@
+ul{
+    display:flex;
+    color:black;
+}
+li a {
+ display:block;
+ 
+}
+a{
+    text-decoration:none;
+}
+
+  .tituloL{
+      font-size: 25px;
+      
+  }
+
+  .subtituloL{
+      font-size: 20px;
+      font-weight: lighter;
+  }
