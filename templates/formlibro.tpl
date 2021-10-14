@@ -18,8 +18,8 @@
                 <p class ="card-text"><label for="colFormLabel" class="col-sm-2 col-form-label">Descripcion:</label></p>
                 <textarea type="text" name="descripcion"></textarea>
                 <p class ="card-text"><label for="colFormLabel" class="col-sm-2 col-form-label">Autor</label></p>
-                <select name="idAutor">
-                        <option class="text-center">Seleccionar autor</option>
+                <select name="idAutor" required>  
+                        <option value="" class="text-center">Seleccionar autor</option>
                     {foreach from=$autor item=$autorA}
                         <option>{$autorA->idAutor}-{$autorA->nombre}{$autorA->apellido}</option>
                     {/foreach}

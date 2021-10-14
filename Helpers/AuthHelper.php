@@ -15,18 +15,6 @@ class AuthHelper
             header("Location: " .BASE_URL."login");
         }
     } 
-
-    function logAdmin(){
-        if (isset ($SESSION['email'])){
-            $admin= $SESSION['email'];
-            return $admin;
-        } else {
-            $admin='';
-            return $admin;
-        } 
-        
-      
-    } 
  
 }
 

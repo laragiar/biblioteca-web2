@@ -13,33 +13,29 @@
            <div class="container-fluid">
           
                 
-           </div> 
-           <div>
-           <nav class="navbar navbar-dark bg-dark px-5">
-           <div>
-           <ul class="list-inline hover">
-            <li  class="px-4 hover"><a href="home" class="mt-2 text-light">Home</a></li>
-            <li class="px-4"><a href="showAutor" class="mt-2 text-light ">Autores</a></li>
-            <li  class="px-4"><a href="showLibros" class="mt-2 text-light">Libros</a></li>
-             {if isset ($smarty.session.email)}
-            <li  class="px-4"><a href="insertAutor" class="mt-2 text-light">Insertar nuevo autor</a></li>
-            <li  class="px-4"><a href="insertLibro"  class="mt-2 text-light">Insertar nuevo libro </a></li>
-            {/if}
-       </ul> 
-         </div>
-            <div>
-            <ul class="nav justify-content-end">
-            {if isset ($smarty.session.email)}
-            <li  class="px-4 "><a href="logout"class="mt-2 text-light"><ins>Log Out</ins></a></li>
-            {else}
-            <li  class="px-4"><a href="registrarse" class="mt-2 text-light float-right"><ins>Registrarse</ins></p> </a></li>
-            <li  class="px-4 "> <a href="login"class="mt-2 text-light"><ins>Login</ins></a></li>
-            {/if}
-            </ul>
+          </div> 
+          <div>
+          <nav class="navbar navbar-dark bg-dark px-5">
+              <div>
+                <ul class="list-inline hover">
+                    <li  class="px-4 hover"><a href="home" class="mt-2 text-light">Home</a></li>
+                    <li class="px-4"><a href="showAutor" class="mt-2 text-light ">Autores</a></li>
+                    <li  class="px-4"><a href="showLibros" class="mt-2 text-light">Libros</a></li>
+                    {if isset ($smarty.session.email)}
+                      <li  class="px-4"><a href="insertAutor" class="mt-2 text-light">Insertar nuevo autor</a></li>
+                      <li  class="px-4"><a href="insertLibro"  class="mt-2 text-light">Insertar nuevo libro </a></li>
+                    {/if}
+                </ul> 
             </div>
-      
-  
-
-
-</nav>
+            <div>
+                <ul class="nav justify-content-end">
+                {if isset ($smarty.session.email)}
+                <li  class="px-4 "><a href="logout"class="mt-2 text-light"><p><ins>Log Out</ins></p></a></li>
+                {else}
+                <li  class="px-4"><a href="registrarse" class="mt-2 text-light"><p><ins>Registrarse</ins></p></a></li>
+                <li  class="px-4 "> <a href="login"class="mt-2 text-light"><p><ins>Login</ins></p></a></li>
+                {/if}
+                </ul>
+            </div>  
+          </nav>
  </div>

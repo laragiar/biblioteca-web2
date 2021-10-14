@@ -1,6 +1,6 @@
  {include file='templates/header.tpl'} 
 <div class="container mt-4">
-<p class="tituloL"><ins>Autores:<ins></p>
+<p class="tituloL"><ins>Autores<ins></p>
         <table class="table table-secondary table-striped">
             <thead>
                 <tr>
