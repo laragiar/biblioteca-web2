@@ -15,15 +15,19 @@ class LibroView {
 
     }
 
-    function showLibros($libros){
+    function showLibros($libros,$pages,$pageActual){
         $this->smarty->assign('titulo','Libros');
         $this->smarty->assign('libros',$libros);
+        $this->smarty->assign('pages', $pages);
+        $this->smarty->assign('pageActual', $pageActual);
         $this->smarty->display('templates/libros.tpl');      
     }
 
-    function showLibroid($libro){
+    function showLibroid($libro,$id,$rol=""){
         $this->smarty->assign('titulo','');
         $this->smarty->assign('libro',$libro);
+        $this->smarty->assign('id', $id);
+        $this->smarty->assign('rol', $rol);
         $this->smarty->display('templates/libroDetail.tpl');    
     }
 
@@ -39,6 +43,14 @@ class LibroView {
         $this->smarty->assign('libro',$libro);
         $this->smarty->display('templates/editLibro.tpl'); 
  
+    }
+
+    function search($libros,$autor){
+        $this->smarty->assign('titulo','Biblioteca Web');
+        $this->smarty->assign('autor',$autor);
+        $this->smarty->assign('libros',$libros);
+        $this->smarty->display('templates/search.tpl');
+
     }
 
     function homeRedireccion(){ 

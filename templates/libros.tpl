@@ -5,28 +5,40 @@
 <p class="tituloL"><ins>Libros segun su titulo</ins></p>
 
         <table class="table table-secondary table-striped">
-        {foreach from=$libros item=$libro}
+        
             <thead>
                 <tr>
                 </tr>
             </thead>
             <tbody>
-              
+               {foreach from=$libros item=$libro}
                 <tr>
-                 <th><p class="subtituloL"> {$libro->nombre}</th>
+               
+                 <td class="subtituloL">{$libro->nombre}</td>
                    
-                  <td> <a href="showLibroid/{$libro->idLibro}"><button class="btn btn-info text-light">Ver Detalles</button></a>
-                   {if isset ($smarty.session.email)}
-                   <a href="updateLibro/{$libro->idLibro}"><button class="btn btn-success">Editar</button></a>
-                   <a href="deleteLibro/{$libro->idLibro}"><button class="btn btn-danger">Borrar</button></a>
+                  <td> <a href="showLibroid/{$libro->idLibro}"><button class="btn btn-info text-light">Ver Detalles</button></a></td>
+                  {if isset ($smarty.session.email) && ($smarty.session.rol == 1)}
+                   <td> <a href="updateLibro/{$libro->idLibro}"><button class="btn btn-success">Editar</button></a></td>
+                   <td> <a href="deleteLibro/{$libro->idLibro}"><button class="btn btn-danger">Borrar</button></a></td>
                    {/if}
-                   </td>
+                   
                 
                 </tr>
             </tbody>
             {/foreach}    
         </table>
-        
+        <div class="d-flex flex-row-reverse">
+        <ul class="pagination mt-4">
+            {if $pageActual!=1}
+            <li class="page-item"><a class="page-link" href="showLibros?page={$pageActual-1}">Anterior</a></li>
+            {/if}
+            {for $page=1 to $pages}
+              <li class="page-item"><a class="page-link" href="showLibros?page={$page}">{$page}</a></li>
+            {/for}
+            {if $pageActual<=$pages}
+           <li class="page-item"><a class="page-link" href="showLibros?page={$pageActual+1}">Siguiente</a></li>
+           {/if}
+        </ul>
+       </div>
+</div>    
 {include file='templates/footer.tpl'} 
-
-</div>

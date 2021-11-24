@@ -3,7 +3,6 @@
 class AuthHelper{
     
     function __construct(){
-         // abre la sessión siempre para usar el helper
         if (session_status() != PHP_SESSION_ACTIVE) {
             session_start();
         }
@@ -15,6 +14,23 @@ class AuthHelper{
             header("Location: " .BASE_URL."login");
         }
     } 
- 
+
+    function getId(){
+        if (isset($_SESSION['id'])) {
+            $id=$_SESSION['id'] ;
+            return $id;
+        }
+    } 
+    function getRol(){
+            if (isset($_SESSION['rol'])) {
+                $rol=$_SESSION['rol'];
+                return $rol;
+            }
+    }
+
+    function logout(){
+        session_destroy();
+    }
 }
 
+   

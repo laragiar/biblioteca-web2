@@ -38,7 +38,7 @@
                                         <td>{$libro->editorial}</td>
                                         <td>{$libro->descripcion}</td>
                                         <td><a class="text-dark"
-                                                href="viewAutorID/{$libro->idAutor}"><ins>{$libro->nombreA}{$libro->apellidoA}</ins></a>
+                                                href="viewAutorID/{$autor->idAutor}"><ins>{$autor->nombre}{$autor->apellido}</ins></a>
                                         </td>
                                     {/foreach}
 
@@ -47,3 +47,4 @@
                         </table>
                         </div>
 </div>
+{include file='templates/footer.tpl'}
