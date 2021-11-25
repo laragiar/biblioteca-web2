@@ -6,7 +6,7 @@
             <div v-for="comentario in comentarios" class="list-group-item list-group-item-action d-flex ">
                 <div class="d-flex justify-content-between">
                     <p class="m-2">{{comentario.descripcion}}</p>
-                    <p class="m-2">Puntuo el libro con: {{comentario.puntuacion}} estrellas</p>
+                    <p class="m-2">Puntuo con: {{comentario.puntuacion}} estrellas</p>
                 </div>
                 <div class="ml-6">
                     <div v-if="rol == '1'">

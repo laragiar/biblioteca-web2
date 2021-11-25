@@ -11,8 +11,8 @@
             {if isset ($libro->img)}
                 <img class="rounded float-start" src="{$libro->img}" />
             {/if}
-            <p class="text-card">Genero:{$libro->genero}</p>
-            <p class="text-card">Autor:{$libro->nombreA}{$libro->apellidoA}</p>
+            <p class="text-card">Genero: {$libro->genero}</p>
+            <p class="text-card">Autor:  {$libro->nombreA}{$libro->apellidoA}</p>
             <p class="text-card">Descripcion: {$libro->descripcion}</p>
             <p class="text-card">Editorial: {$libro->editorial}</p>
             

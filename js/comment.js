@@ -31,27 +31,6 @@ const API_URL="api/comentarios/";
     }
     getComentarios();
    
-    let filter = document.querySelector("#filter");
-    filter.addEventListener("submit", filterComentarios);
-
-    
-    async function filterComentarios(e) {
-        e.preventDefault();
-        let formData = new FormData(filter);
-        let score = formData.get("puntuacion");
-        let idLibro = document.querySelector("#libro").dataset.id;
-        try { 
-            if (score!=''){
-                let response = await fetch(`${API_URL}${idLibro}/${score}`);
-                let comentariosApi = await response.json();
-                app.comentarios = comentariosApi;
-            }else{
-                getComentarios();
-            }                     
-        } catch (e) {
-           console.log(e);
-        }
-    }
 
     async function deleteComment(idComment) {
         let url = (API_URL + idComment);

@@ -27,7 +27,8 @@ class ApiController{
 
 
   function deleteComment($params = null){
-    if ($this->authHelper->checkLoggedIn() && ($_SESSION['rol'] == 1)) {
+    $this->authHelper->checkLoggedIn() ;
+    if ( ($_SESSION['rol'] == 1)) {
       $idComment = $params[":ID"];
       $comment = $this->modelComment->getComment($idComment);
       if (!empty($comment) && isset($comment)) {

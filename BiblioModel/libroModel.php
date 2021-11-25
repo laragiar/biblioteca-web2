@@ -72,6 +72,9 @@ class LibroModel{
             $sentencia = $this -> db -> prepare("INSERT INTO libros (nombre,genero,editorial,descripcion,idAutor,img) VALUES(?,?,?,?,?,?)");
             $sentencia -> execute(array($nombre,$genero,$editorial, $descripcion,$idAutor,$pathImg));
         
+        }else{
+            $sentencia = $this -> db -> prepare("INSERT INTO libros (nombre,genero,editorial,descripcion,idAutor,img) VALUES(?,?,?,?,?,?)");
+            $sentencia -> execute(array($nombre,$genero,$editorial, $descripcion,$idAutor,$pathImg));
         }
     }
      

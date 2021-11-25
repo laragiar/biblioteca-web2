@@ -51,14 +51,14 @@ class LibroController{
         if ($_SESSION['rol']==1){
             if (isset($nombre) && isset($idAutor) && isset ($genero) && isset ($editorial) && isset ($descripcion) && !empty($nombre) &&
             !empty ($genero) && !empty ($editorial) && !empty ($descripcion) && !empty ($idAutor)){
-                if( $_FILES['input_name']['type'] == "image/jpg" ||
-                    $_FILES['input_name']['type'] == "image/jpeg" ||
-                    $_FILES['input_name']['type'] == "image/png"){
-                        $this->model->insertLibro($nombre, $genero, $editorial, $descripcion,$idAutor,$_FILES['input_name']);
-                        $this->view->showLibroLocation();
-                }else {
-                        $this->model->insertLibro($nombre, $genero, $editorial, $descripcion,$idAutor);
-                        $this->view->showLibroLocation();
+                    if( $_FILES['input_name']['type'] == "image/jpg" ||
+                        $_FILES['input_name']['type'] == "image/jpeg" ||
+                        $_FILES['input_name']['type'] == "image/png"){
+                            $this->model->insertLibro($nombre, $genero, $editorial, $descripcion,$idAutor,$_FILES['input_name']);
+                            $this->view->showLibroLocation();
+                    }else {
+                            $this->model->insertLibro($nombre, $genero, $editorial, $descripcion,$idAutor);
+                            $this->view->showLibroLocation();
                 }
           }
         }   
