@@ -44,8 +44,10 @@ const API_URL="api/comentarios/";
         try { 
             if (score!=''){
                 let response = await fetch(`${API_URL}${idLibro}/${score}`);
-                let comentariosApi = await response.json();
-                app.comentarios = comentariosApi;
+                if(response.ok){
+                    let comentariosApi = await response.json();
+                    app.comentarios = comentariosApi;
+                }
             }else{
                 getComentarios();
             }                     
