@@ -15,11 +15,12 @@ class LibroView {
 
     }
 
-    function showLibros($libros,$pages,$pageActual){
+    function showLibros($libros,$pages,$pageActual,$error=""){
         $this->smarty->assign('titulo','Libros');
         $this->smarty->assign('libros',$libros);
         $this->smarty->assign('pages', $pages);
         $this->smarty->assign('pageActual', $pageActual);
+        $this->smarty->assign('error',$error);
         $this->smarty->display('templates/libros.tpl');      
     }
 
@@ -58,7 +59,7 @@ class LibroView {
     }
 
     function showLibroLocation(){
-        header("Location: ".BASE_URL."showLibros");
+        header("Location: ".BASE_URL."showLibros?page=1");
     }  
 
     function showLoginLocation(){

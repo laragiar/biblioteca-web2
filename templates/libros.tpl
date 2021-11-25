@@ -27,6 +27,11 @@
             </tbody>
             {/foreach}    
         </table>
+        {if $error!=''} 
+        <div>
+            <h6 class="d-flex mt-3 alert alert-danger">{$error}</h6>
+        </div>
+        {/if}
         <div class="d-flex flex-row-reverse">
         <ul class="pagination mt-4">
             {if $pageActual!=1}

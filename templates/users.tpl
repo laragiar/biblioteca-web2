@@ -31,5 +31,5 @@
             <h6 class="d-flex mt-3 alert alert-danger">{$error}</h6>
             </div>
         {/if}
-           
+          
 {include file='templates/footer.tpl'} 

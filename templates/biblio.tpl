@@ -12,7 +12,7 @@
                 <p class="subtituloL">Ingrese su busqueda</p>
                 </div>
                 <form id="select-titulo" action="search" method="POST">
-                    <input   type="text" name="search" placeholder="Buscar por">
+                    <input   type="text" name="search" placeholder="Buscar por titulo">
                     <input class="btn-dark" type="submit" id="btn-titulo" name="Filtrar">
                 </form>
                 </div>
@@ -36,7 +36,7 @@
                                         <td>{$libro->nombre}</td>
                                         <td>{$libro->genero}</td>
                                         <td>{$libro->editorial}</td>
-                                        <td>{$libro->descripcion}</td>
+                                        <td>{$libro->descripcion|truncate:150}</td>
                                         <td><a class="text-dark"
                                                 href="viewAutorID/{$libro->idAutor}"><ins>{$libro->nombreA}{$libro->apellidoA}</ins></a>
                                         </td>

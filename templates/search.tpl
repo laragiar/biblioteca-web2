@@ -12,7 +12,7 @@
                 <p class="subtituloL">Ingrese su busqueda</p>
                 </div>
                 <form id="select-titulo" action="search" method="POST">
-                    <input   type="text" name="search" placeholder="Buscar por">
+                    <input   type="text" name="search" placeholder="Buscar por titulo">
                     <input class="btn-dark" type="submit" id="btn-titulo" name="Filtrar">
                 </form>
                 </div>
@@ -47,4 +47,5 @@
                         </table>
                         </div>
 </div>
-{include file='templates/footer.tpl'}
+</body>
+</html>

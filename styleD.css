@@ -1,3 +1,4 @@
+
 ul{
     display:flex;
     color:black;
@@ -5,8 +6,6 @@ ul{
 }
 li a {
  display:block;
- 
- 
 }
 a{
     text-decoration:none;
@@ -21,3 +20,5 @@ a{
       font-size: 17px;
       font-weight: lighter;
   }
+
+ 

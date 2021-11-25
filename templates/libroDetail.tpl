@@ -16,11 +16,30 @@
             <p class="card-text">Descripcion: {$libro->descripcion}</p>
             <p class="card-text">Editorial: {$libro->editorial}</p>
 
+            <div class="d-flex justify-content-end">
+                <div class="m-2">
+                <p> Buscar comentarios por puntaje </p>
+                </div>
+                <div class="d-flex"> 
+                <form id="filter">
+                    <select class="form-select" name="puntuacion">
+                        <option value="">Todos</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="submit" id="btn-filter" value="Filtrar" class="btn btn-dark m-2">
+                </form>
+                </div>
+            </div>
 
             <div class="card-body" id="app">
                 {include file='templates/vue/comments.tpl'}
             </div>
 
+            
             {if isset ($smarty.session.email)}
 
                 <div class="card-body">

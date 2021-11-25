@@ -33,15 +33,29 @@ class AutorController{
     
     function createAutor(){
         $this->authHelper->checkLoggedIn();
-        $this->model->insertAutor($_POST['nombre'], $_POST['apellido'], $_POST['nacionalidad']);
-        $this->view->showAutorLocation();
+        $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $nacionalidad=$_POST['nacionalidad'];
+        if ($_SESSION['rol']==1){
+            if (isset($nombre) && isset($apellido) && isset ($nacionalidad)
+                && !empty($nombre) && !empty ($apellido) && !empty ($nacionalidad)){
+                $this->model->insertAutor($nombre,$apellido,$nacionalidad);
+                $this->view->showAutorLocation();
+            }
+        }else{
+            $this->view->showAutorLocation();
+        }
     }   
     
 
     function deleteAutor($id){
         $this->authHelper->checkLoggedIn();
+        if ($_SESSION['rol']==1){
         $this->model->deleteAutor($id);
         $this->view->showAutorLocation();
+        }else{
+            $this->view->showAutorLocation();
+        }
     }
 
     function viewAutorID($id){
@@ -52,14 +66,27 @@ class AutorController{
 
     function editAutor($id){
         $this->authHelper->checkLoggedIn();
-        $autor = $this->model->get_Autor($id);
-        $this->view->showEdit($autor);
+        if(isset ($id)){
+            $autor = $this->model->get_Autor($id);
+            $this->view->showEdit($autor);
+        }
     } 
 
     function updateAutor($id){
         $this->authHelper->checkLoggedIn();
-        $this->model->updateAutor($id,$_POST['nombre'], $_POST['apellido'], $_POST['nacionalidad']);
-        $this->view->showAutorLocation();
+        if ($_SESSION['rol']==1){
+            $nombre=$_POST['nombre'];
+            $apellido=$_POST['apellido'];
+            $nacionalidad=$_POST['nacionalidad'];
+            if (isset($id) &&isset($nombre) && isset($apellido) && isset ($nacionalidad)
+                && !empty($nombre) && !empty ($apellido) && !empty ($nacionalidad)){
+                $this->model->updateAutor($id,$nombre, $apellido, $nacionalidad);
+                $this->view->showAutorLocation();
+            }
+
+        }else{
+            $this->view->showAutorLocation();
+        }
     }
 
 }

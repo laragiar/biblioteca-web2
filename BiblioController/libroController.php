@@ -26,10 +26,12 @@ class LibroController{
     }
     
     function showLibroid($id){
-        $libro=$this->model->get_Libro($id);
-        $id=$this->authHelper->getId();
-        $rol=$this->authHelper->getRol();
-        $this->view->showLibroid($libro,$id,$rol);
+        if (isset ($id)){
+            $libro=$this->model->get_Libro($id);
+            $id=$this->authHelper->getId();
+            $rol=$this->authHelper->getRol();
+            $this->view->showLibroid($libro,$id,$rol);
+        }
     } 
 
     function insertLibro(){
@@ -41,14 +43,24 @@ class LibroController{
     
     function createLibro(){
         $this->authHelper->checkLoggedIn();
-        if( $_FILES['input_name']['type'] == "image/jpg" ||
-            $_FILES['input_name']['type'] == "image/jpeg" ||
-            $_FILES['input_name']['type'] == "image/png"){
-                $this->model->insertLibro($_POST['nombre'], $_POST['genero'], $_POST['editorial'], $_POST['descripcion'],$_POST['idAutor'],$_FILES['input_name']);
-                $this->view->showLibroLocation();
-        }else {
-                $this->model->insertLibro($_POST['nombre'], $_POST['genero'], $_POST['editorial'], $_POST['descripcion'],$_POST['idAutor']);
-                $this->view->showLibroLocation();
+        $nombre=$_POST['nombre'];
+        $genero=$_POST['genero'];
+        $editorial=$_POST['editorial'];
+        $descripcion=$_POST['descripcion'];
+        $idAutor=$_POST['idAutor'];
+        if ($_SESSION['rol']==1){
+            if (isset($nombre) && isset($idAutor) && isset ($genero) && isset ($editorial) && isset ($descripcion) && !empty($nombre) &&
+            !empty ($genero) && !empty ($editorial) && !empty ($descripcion) && !empty ($idAutor)){
+                if( $_FILES['input_name']['type'] == "image/jpg" ||
+                    $_FILES['input_name']['type'] == "image/jpeg" ||
+                    $_FILES['input_name']['type'] == "image/png"){
+                        $this->model->insertLibro($nombre, $genero, $editorial, $descripcion,$idAutor,$_FILES['input_name']);
+                        $this->view->showLibroLocation();
+                }else {
+                        $this->model->insertLibro($nombre, $genero, $editorial, $descripcion,$idAutor);
+                        $this->view->showLibroLocation();
+                }
+          }
         }   
        
     }   
@@ -56,25 +68,39 @@ class LibroController{
     
     function updateLibro($id){
         $this->authHelper->checkLoggedIn();
-        $libro=$this->model->get_Libro($id);
-        $this->view->showEdit($libro);
+        if (isset ($id)){
+            $libro=$this->model->get_Libro($id);
+            $this->view->showEdit($libro);
+        }
     } 
 
     function editLibro($id){
         $this->authHelper->checkLoggedIn();
-        $this->model->updateLibro($id,$_POST['nombre'], $_POST['genero'], $_POST['editorial'], $_POST['descripcion']);
-        $this->view->showLibroLocation();
+        $nombre=$_POST['nombre'];
+        $genero=$_POST['genero'];
+        $editorial=$_POST['editorial'];
+        $descripcion=$_POST['descripcion'];
+        if ($_SESSION['rol']==1){
+            if (isset($id) && isset($nombre) && isset ($genero) && isset ($editorial) && isset ($descripcion) && !empty($nombre) &&
+                !empty ($genero) && !empty ($editorial) && !empty ($descripcion)){
+                    $this->model->updateLibro($id,$nombre,$genero, $editorial, $descripcion);
+                    $this->view->showLibroLocation();
+                }else{
+                    $this->view->showLibroLocation();
+                }
+            }        
     }
     
     function deleteLibro($id){
-        if ($this->authHelper->checkLoggedIn() && $_SESSION['rol']==1){
-            $this->model->deleteLibro($id);
-            $this->view->showLibroLocation();
-        }else{ /////////////////////////////ERROR NO SOS ADMINISTRADORRRRRR!!!!!!!!!
+        $this->authHelper->checkLoggedIn();
+        if (isset ($id)){
+            if ($_SESSION['rol']==1){
+                $this->model->deleteLibro($id);
+                $this->view->showLibroLocation();
+            }
+        }else{ 
             $this->view->showLibroLocation();
         }
-        
-
     }
 
     function search(){   
@@ -99,7 +125,7 @@ class LibroController{
     function showPagination(){
         $resultsPage = 7; //variable de cant de resultados deseados por pagina (limite)
         $libros= count ($this->model->getLibros()); //obtiene cantidad de la tabla
-        $numberPages = ceil($libros / $resultsPage); //calcula cant de paginas existenes, ceil devuelve la division redondeada
+        $numberPages = ceil($libros / $resultsPage); //cant paginas existenes
         if (!isset($_GET['page']) || ($_GET['page'] == '') ||  ($_GET['page'] == 0)) { //si no se especifica pagina se muestra la primera
             $page = 1;
         } else {
@@ -118,3 +144,6 @@ class LibroController{
     }
 
 }
+
+
+

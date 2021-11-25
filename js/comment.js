@@ -12,15 +12,15 @@ const API_URL="api/comentarios/";
         },
         methods: {
             eliminar: function (e) {
-                deleteComment(e.target.id)
-            }
+                deleteComment(e.target.id)},
+
         }
     });
+
 
     async function getComentarios(){
         try{
             let idLibro = document.querySelector("#libro").dataset.id;
-            //fetch para traer todos los comentarios
             let response= await fetch (API_URL + idLibro);
             let comentariosApi= await response.json();
             app.comentarios=comentariosApi;
@@ -30,7 +30,28 @@ const API_URL="api/comentarios/";
         }
     }
     getComentarios();
+   
+    let filter = document.querySelector("#filter");
+    filter.addEventListener("submit", filterComentarios);
 
+    
+    async function filterComentarios(e) {
+        e.preventDefault();
+        let formData = new FormData(filter);
+        let score = formData.get("puntuacion");
+        let idLibro = document.querySelector("#libro").dataset.id;
+        try { 
+            if (score!=''){
+                let response = await fetch(`${API_URL}${idLibro}/${score}`);
+                let comentariosApi = await response.json();
+                app.comentarios = comentariosApi;
+            }else{
+                getComentarios();
+            }                     
+        } catch (e) {
+           console.log(e);
+        }
+    }
 
     async function deleteComment(idComment) {
         let url = (API_URL + idComment);
@@ -57,7 +78,7 @@ const API_URL="api/comentarios/";
     let btnAddComment = document.querySelector("#btnAdd");
     btnAddComment.addEventListener("click", addComment);
     
-
+    
 
     function commentData() {
         let formData = new FormData(formComment);
@@ -65,7 +86,7 @@ const API_URL="api/comentarios/";
         let idUser = document.querySelector("#apiComment").dataset.user;
         let descripcion = formData.get("comment");
         let puntuacion = Number(formData.get("puntuacion"));
-        if (descripcion != '' && puntuacion != 0) {
+        if (descripcion != '' && puntuacion != 0 && 5<=puntuacion<=1){
             let newComment = {
                 "descripcion": descripcion,
                 "puntuacion": puntuacion,
@@ -95,6 +116,8 @@ const API_URL="api/comentarios/";
         }
         getComentarios();
     }
-
-
+    
+    
 });
+
+

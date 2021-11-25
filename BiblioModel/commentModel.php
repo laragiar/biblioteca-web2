@@ -32,7 +32,7 @@ class CommentModel {
         return $comments; 
     }
 
-    function getByPunctuation($idLibro, $score){
+    function getCommentsByScore($idLibro, $score){
         $sentencia = $this->db->prepare("SELECT * FROM comentarios WHERE idLibro=? AND puntuacion=?");
         $sentencia->execute(array($idLibro,$score));           
         return $sentencia->fetchAll(PDO::FETCH_OBJ);

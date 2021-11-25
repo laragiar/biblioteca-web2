@@ -20,14 +20,12 @@
                      <label>Descripcion:</label>
                      <textarea class="form-control" rows="5" name="descripcion">{$libro->descripcion}</textarea>
                  </div>
-                 <div class="col mt-2">
-                     <input type="file" name="input_name" id="imageToUpload">
-                 </div>
                  <div class="col mt-4">
                      <input type="submit" class="btn btn-secondary" value="Finalizar edicion">
                  </div>
              </div>
          </form>
+         
 
      </div>
 
