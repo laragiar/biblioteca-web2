@@ -25,7 +25,11 @@
                  </div>
              </div>
          </form>
-         
+         {if isset ($libro->img)}
+            <div class="text-center py-3">
+                <a href="deleteImagen/{$libro->idLibro}"><button class="btn btn-dark">Borrar imagen</button></a>
+             </div>
+        {/if}
 
      </div>
 

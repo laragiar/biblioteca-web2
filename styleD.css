@@ -21,4 +21,6 @@ a{
       font-weight: lighter;
   }
 
- 
+  img {
+    width: 200px;
+  }

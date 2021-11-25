@@ -61,7 +61,12 @@ class AutorController{
     function viewAutorID($id){
        $autor = $this->model->get_Autor($id);
        $libros = $this->modelLibro->getLibrosByAutor($id);
-       $this->view->showAutorID($autor,$libros);
+       if(!empty($libros) && !empty($actor)){
+          $this->view->showAutorID($autor,$libros);
+       }else{
+            $this->view->showAutorLocation();
+       }
+       
     } 
 
     function editAutor($id){

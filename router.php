@@ -63,6 +63,9 @@ switch ($params[0]) {
     case 'deleteLibro':
         $libroController->deleteLibro($params[1]);
         break;
+    case 'deleteImagen':
+        $libroController->deleteImagen($params[1]);
+        break;
     case 'updateLibro':
         $libroController->updateLibro($params[1]);
         break; 

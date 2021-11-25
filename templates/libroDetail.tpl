@@ -11,11 +11,13 @@
             {if isset ($libro->img)}
                 <img class="rounded float-start" src="{$libro->img}" />
             {/if}
-            <p class="card-text">Genero: {$libro->genero}</p>
-            <p class="card-text">Autor: {$libro->nombreA}{$libro->apellidoA}</p>
-            <p class="card-text">Descripcion: {$libro->descripcion}</p>
-            <p class="card-text">Editorial: {$libro->editorial}</p>
-
+            <p class="text-card">Genero:{$libro->genero}</p>
+            <p class="text-card">Autor:{$libro->nombreA}{$libro->apellidoA}</p>
+            <p class="text-card">Descripcion: {$libro->descripcion}</p>
+            <p class="text-card">Editorial: {$libro->editorial}</p>
+            
+        </div>
+        <div class="card-body">
             <div class="d-flex justify-content-end">
                 <div class="m-2">
                 <p> Buscar comentarios por puntaje </p>
@@ -39,7 +41,7 @@
                 {include file='templates/vue/comments.tpl'}
             </div>
 
-            
+        </div>  
             {if isset ($smarty.session.email)}
 
                 <div class="card-body">
@@ -65,7 +67,7 @@
                     </form>
                 </div>
             {/if}
-
+         
             <div class="card-body">
                 <button class="btn btn-dark "><a href="showLibros?page=1" class="text-light">Regresar</a></button>
             </div>

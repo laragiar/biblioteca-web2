@@ -143,6 +143,24 @@ class LibroController{
         } 
     }
 
+    function deleteImagen($id){
+        $this->authHelper->checkLoggedIn();
+        if (isset ($id)){
+            if ($_SESSION['rol']==1){
+                $libro=$this->model->get_Libro($id);
+                $id=$this->authHelper->getId();
+                $rol=$this->authHelper->getRol();
+                $img=$libro->img;
+                if ($img){
+                    $this->model->deleteImagen($id, $img);
+                }
+                $this->view->showLibroid($libro,$id,$rol);
+            }
+        }else{ 
+            $this->view->showLibroLocation();
+        }
+    }
+
 }
 
 

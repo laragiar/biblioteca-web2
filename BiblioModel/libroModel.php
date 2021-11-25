@@ -86,7 +86,15 @@ class LibroModel{
         $libros = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $libros;
     }
+    
 
+    function deleteImagen($id, $path = null){
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        $sentencia = $this->db->prepare("UPDATE libros SET img=null WHERE idLibro=?");
+        $sentencia->execute(array($id));
+    }
 
     private function uploadImage($img){
         $target= 'img/libro/'. uniqid() . '.' . strtolower(pathinfo($img['name'], PATHINFO_EXTENSION));
